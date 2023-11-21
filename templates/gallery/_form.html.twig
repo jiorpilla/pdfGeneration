@@ -1,0 +1,22 @@
+{{ form_start(form) }}
+    {{ form_row(form.name) }}
+
+<ul id="images-fields-list"
+    data-prototype="{{ form_widget(form.images.vars.prototype)|e }}"
+    data-widget-tags="{{ '<li></li>'|e }}"
+    data-widget-counter="{{ form.images|length }}">
+    {% for imageField in form.images %}
+        <li>
+            {{ form_errors(imageField) }}
+            {{ form_widget(imageField) }}
+        </li>
+    {% endfor %}
+</ul>
+<button type="button"
+        class="add-another-collection"
+        data-list-selector="#images-fields-list">Add another image
+</button>
+
+
+<button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}

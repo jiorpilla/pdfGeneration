@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Show{% endblock %}
+
+{% block body %}
+    {{ gallery.name }}
+    <br>
+    {% for image in gallery.images%}
+        <img src="{{ vich_uploader_asset(image) }}"
+             style="width:200px;">
+
+    {% endfor %}
+
+{% endblock %}
