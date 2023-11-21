@@ -1,5 +1,6 @@
 /.idea
 /public/pdf/
+/public/images/
 
 ###> symfony/framework-bundle ###
 /.env.dev
