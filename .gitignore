@@ -1,6 +1,7 @@
 /.idea
 /public/pdf/
 /public/images/
+/migrations
 
 ###> symfony/framework-bundle ###
 /.env.dev
