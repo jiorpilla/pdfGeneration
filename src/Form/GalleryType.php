@@ -19,6 +19,10 @@ class GalleryType extends AbstractType
                 'entry_type' => ImageType::class,
                 'allow_add' => true,
                 'by_reference' => false,
+                'label' => false, // If you want to hide the label for the images collection
+                'allow_delete' => false,
+                'required' => false,
+                'disabled' => false,
             ]);
     }
 
