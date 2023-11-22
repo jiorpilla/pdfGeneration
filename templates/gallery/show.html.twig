@@ -3,12 +3,19 @@
 {% block title %}Show{% endblock %}
 
 {% block body %}
-    {{ gallery.name }}
+    <div>
+        <h2 class="text-center">{{ gallery.name }}</h2>
+    </div>
     <br>
-    {% for image in gallery.images%}
-        <img src="{{ vich_uploader_asset(image) }}"
-             style="width:200px;">
+    <div class="container">
+        <div class="row">
+            {% for image in gallery.images %}
+                <div class="col-6">
+                    <img src="{{ absolute_url(vich_uploader_asset(image))  }}" style="width:100%;">
+                </div>
 
-    {% endfor %}
+            {% endfor %}
+        </div>
+    </div>
 
 {% endblock %}

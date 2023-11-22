@@ -1,8 +1,44 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Gallery!{% endblock %}
+{% block title %}Gallery!{% endblock %}
 
 {% block body %}
 
-    {{ include('gallery/_form.html.twig') }}
+
+    <h1>Gallery List</h1>
+
+
+    <a class="btn btn-dark"
+       href="{{ path('gallery_create_gallery') }}">Create new</a>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Downloads</th>
+            <th>actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for gallery in gallery_list %}
+            <tr>
+                <td><a href="{{ path('gallery_show', {'id': gallery.id}) }}">{{ gallery.name }}</a></td>
+                <td>
+                    {% if gallery.pdfExists is defined and gallery.pdfExists is not empty %}
+                        <a href="{{ asset(gallery.pdfFilePath) }}" download>Download PDF</a>
+                    {% else %}
+                        No PDF available
+                    {% endif %}
+                </td>
+                <td>
+                    <a href="{{ path('gallery_show', {'id': gallery.id}) }}">show</a>
+                    <a href="{{ path('gallery_edit_gallery', {'id': gallery.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}
