@@ -18,10 +18,13 @@ should include the following functions:
 #### Optional: Unit tests
     • If time remains, create unit tests for this usecase using PHPUnit to ensure the fun
 
-To use this:
+To use this project :
 
     composer install
     yarn install
+
+    add your DB settings in .env
+
     php bin\console doctrine:database:create
     php bin\console make:migration
     php bin\console doctrine:migrate
