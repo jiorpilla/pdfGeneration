@@ -21,7 +21,7 @@ class GalleryController extends AbstractController
             'controller_name' => 'GalleryController',
         ]);
     }
-    #[Route('/create', name: 'create_gallery')]
+    #[Route('/create', name: 'create_gallery', methods: ['GET', 'POST'])]
     public function createGallery(Request $request, EntityManagerInterface $entityManager): Response
     {
         $gallery = new Gallery();
@@ -38,7 +38,7 @@ class GalleryController extends AbstractController
             $entityManager->persist($gallery);
             $entityManager->flush();
 
-            return $this->redirectToRoute('app_home');
+            return $this->redirectToRoute('gallery_list');
         }
 
         return $this->render('gallery/new.html.twig', [
