@@ -4,20 +4,15 @@ namespace App\Message;
 
 final class GeneratePdfMessage
 {
-    /*
-     * Add whatever properties and methods you need
-     * to hold the data for this message class.
-     */
+     private $gallery_id;
 
-//     private $name;
+     public function __construct(int $gallery_id)
+     {
+         $this->gallery_id = $gallery_id;
+     }
 
-//     public function __construct(string $name)
-//     {
-//         $this->name = $name;
-//     }
-
-//    public function getName(): string
-//    {
-//        return $this->name;
-//    }
+    public function getGalleryId(): string
+    {
+        return $this->gallery_id;
+    }
 }
