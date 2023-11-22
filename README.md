@@ -31,6 +31,7 @@ run this so that messenger is processed
     php bin\console messenger:consume async
     
 packages i used:
+
 ###php
 
 
@@ -38,7 +39,9 @@ packages i used:
         "symfony/webpack-encore-bundle": "^2.1",
         "vich/uploader-bundle": "*"
 
+
 ###javscript
+
 
         "@symfony/webpack-encore": "^4.5.0",
         "bootstrap": "^5.3.2",
